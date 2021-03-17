@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox fx:controller="pl.kancelaria.controllers.CasesController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1200.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1000.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.kancelaria.controllers.CasesController">
    <children>
       <HBox prefHeight="53.0" prefWidth="600.0">
          <children>
@@ -28,11 +28,6 @@
                </padding>
             </CheckBox>
             <Pane prefHeight="47.0" prefWidth="416.0" />
-            <Button fx:id="toMainWindow" minWidth="-Infinity" mnemonicParsing="false" onAction="#toMainWindow" prefHeight="25.0" prefWidth="95.0" text="Powrót">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin>
-            </Button>
          </children>
          <VBox.margin>
             <Insets />
@@ -46,9 +41,9 @@
           <TableColumn prefWidth="75.0" text="Sygnatura" />
             <TableColumn prefWidth="143.0" text="Opis" />
           <TableColumn prefWidth="151.0" text="Sąd" />
-            <TableColumn prefWidth="53.0" text="Klient" />
-            <TableColumn prefWidth="98.0" text="Rok rozpoczęcia" />
-            <TableColumn prefWidth="78.0" text="Pracownik" />
+            <TableColumn minWidth="0.0" prefWidth="70.0" text="Klient" />
+            <TableColumn minWidth="0.0" prefWidth="110.0" text="Rok rozpoczęcia" />
+            <TableColumn minWidth="0.0" prefWidth="130.0" text="Pracownik" />
         </columns>
       </TableView>
    </children>

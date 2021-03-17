@@ -3,6 +3,8 @@ package pl.kancelaria.utils;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.layout.Pane;
 
+import java.io.IOException;
+import java.util.Queue;
 import java.util.ResourceBundle;
 
 public class FxmlUtils {
@@ -11,8 +13,8 @@ public class FxmlUtils {
         FXMLLoader loader = new FXMLLoader(FxmlUtils.class.getResource(fxmlPath));
         try {
             return loader.load();
-        } catch (Exception e) {
-            e.getMessage();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
         return null;
 

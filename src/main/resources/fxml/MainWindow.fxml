@@ -5,16 +5,12 @@
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ToggleButton?>
-<?import javafx.scene.control.ToggleGroup?>
-<?import javafx.scene.control.TreeView?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane fx:id="mainWindowBorderPane" fx:controller="pl.kancelaria.controllers.MainWindowController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:id="mainBorderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.kancelaria.controllers.MainWindowController">
    <top>
-      <VBox alignment="CENTER" prefWidth="600.0" BorderPane.alignment="CENTER">
+      <VBox alignment="CENTER" prefHeight="0.0" prefWidth="1200.0" BorderPane.alignment="CENTER">
          <children>
             <MenuBar>
               <menus>
@@ -31,49 +27,26 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <HBox alignment="CENTER" prefWidth="200.0" spacing="10.0">
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-               <children>
-                  <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="Wszystkie zadania">
-                     <toggleGroup>
-                        <ToggleGroup fx:id="taskTypeGroup" />
-                     </toggleGroup>
-                  </ToggleButton>
-                  <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="Do zrobienia" toggleGroup="$taskTypeGroup" />
-                  <ToggleButton mnemonicParsing="false" prefWidth="120.0" text="Do weryfikacji" toggleGroup="$taskTypeGroup" />
-                  <ToggleButton mnemonicParsing="false" prefWidth="120.0" text="Do podpisu" toggleGroup="$taskTypeGroup" />
-                  <ToggleButton mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="Do przypomnienia" toggleGroup="$taskTypeGroup" />
-               </children>
-            </HBox>
          </children>
          <BorderPane.margin>
             <Insets />
          </BorderPane.margin>
       </VBox>
    </top>
-   <center>
-      <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+   <right>
+      <VBox alignment="TOP_CENTER" prefHeight="575.0" prefWidth="115.0" spacing="20.0" BorderPane.alignment="CENTER">
          <children>
-            <TreeView prefHeight="510.0" prefWidth="1040.0">
-               <HBox.margin>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </HBox.margin></TreeView>
-            <VBox alignment="TOP_CENTER" prefHeight="530.0" prefWidth="255.0" spacing="20.0">
-               <children>
-                  <Button onAction="#addTask" mnemonicParsing="false" prefHeight="25.0" prefWidth="120.0" text="Dodaj zadanie" />
-                  <Button onAction="#goToClients" mnemonicParsing="false" prefWidth="120.0" text="Klienci" />
-                  <Button onAction="#goToCases" mnemonicParsing="false" prefWidth="120.0" text="Sprawy" />
-               </children>
-               <HBox.margin>
+            <Button onAction="#addTask" mnemonicParsing="false" prefHeight="25.0" prefWidth="95.0" text="Dodaj Zadanie">
+               <VBox.margin>
                   <Insets />
-               </HBox.margin>
-               <padding>
-                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
-               </padding>
-            </VBox>
+               </VBox.margin>
+            </Button>
+            <Button onAction="#goToClients" mnemonicParsing="false" prefWidth="95.0" text="Klienci" />
+            <Button onAction="#goToCases" mnemonicParsing="false" prefWidth="95.0" text="Sprawy" />
          </children>
-      </HBox>
-   </center>
+         <padding>
+            <Insets left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </right>
 </BorderPane>

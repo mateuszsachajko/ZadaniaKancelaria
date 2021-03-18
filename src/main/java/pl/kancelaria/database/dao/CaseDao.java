@@ -1,4 +1,7 @@
 package pl.kancelaria.database.dao;
 
-public class CaseDao {
+public class CaseDao extends CommonDao{
+    public CaseDao(){
+        super();
+    }
 }

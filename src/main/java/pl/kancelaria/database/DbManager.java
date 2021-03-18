@@ -63,7 +63,7 @@ public class DbManager {
         }
     }
 
-    private static void closeConnectionSource() {
+    public static void closeConnectionSource() {
         if(connectionSource != null) {
             try {
                 connectionSource.close();
@@ -71,5 +71,9 @@ public class DbManager {
                 DialogUtils.dialogError(e.getMessage());
             }
         }
+    }
+
+    public static ConnectionSource getConnectionSource() {
+        return connectionSource;
     }
 }

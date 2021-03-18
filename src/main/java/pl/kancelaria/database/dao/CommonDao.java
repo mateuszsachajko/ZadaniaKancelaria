@@ -84,13 +84,12 @@ public abstract class CommonDao {
         } finally {
             this.closeDbConnection();
         }
-
     }
 
     public <T extends BaseModel, I> List<T> queryForAll(Class<T> cls) throws AppExc {
         try {
             Dao<T, I> dao = getDao(cls);
-            dao.queryForAll();
+            return dao.queryForAll();
         } catch (SQLException throwables) {
             DialogUtils.dialogError(throwables.getMessage());
             throw new AppExc("nie znaleziono tabeli");
@@ -99,7 +98,7 @@ public abstract class CommonDao {
         }
     }
 
-    private <T extends BaseModel, I> Dao<T,I> getDao(Class<T> cls) throws AppExc {
+    public <T extends BaseModel, I> Dao<T,I> getDao(Class<T> cls) throws AppExc {
         try {
             return DaoManager.createDao(connectionSource, cls);
         } catch (SQLException throwables) {
@@ -122,5 +121,4 @@ public abstract class CommonDao {
             DialogUtils.dialogError(e.getMessage());
         }
     }
-
 }

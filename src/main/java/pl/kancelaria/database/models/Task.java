@@ -10,6 +10,8 @@ import java.util.Date;
 @DatabaseTable(tableName = "ZADANIA")
 public class Task implements BaseModel{
 
+    public static final String SPRAWA = "SPRAWA";
+
     public Task(){
         this.deadLine = todayPlus14Days();
         this.status = StatusENUM.Status.DO_ZROBIENIA;
@@ -21,7 +23,7 @@ public class Task implements BaseModel{
     private String desc;
     @DatabaseField(columnName = "TERMIN")
     private Date deadLine;
-    @DatabaseField(columnName = "SPRAWA", foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
+    @DatabaseField(columnName = SPRAWA, foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true, canBeNull = false)
     private Case cas;
     @DatabaseField(columnName = "PRIORYTET", defaultValue = "4")
     private int priority;

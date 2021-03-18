@@ -6,10 +6,13 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import pl.kancelaria.database.DbManager;
 import pl.kancelaria.database.dao.CaseDao;
+import pl.kancelaria.database.dao.TaskDao;
 import pl.kancelaria.database.models.Case;
+import pl.kancelaria.database.models.Task;
 import pl.kancelaria.utils.AppExc;
 import pl.kancelaria.utils.Converters;
 
+import java.sql.SQLException;
 import java.util.List;
 
 public class CaseModel {
@@ -40,13 +43,23 @@ public class CaseModel {
         DbManager.closeConnectionSource();
         this.init();
     }
-    public void edit(){
+    public void edit() throws AppExc {
         CaseDao caseDao = new CaseDao();
         Case cas = Converters.caseFxToCase(this.getCaseFXObjectPropertyEdit());
+        caseDao.createOrUpdate(cas);
+        DbManager.closeConnectionSource();
+        this.init();
 
     }
-    public void delete(){}
-    public void finishCase(){}
+    public void delete() throws AppExc, SQLException {
+        CaseDao caseDao = new CaseDao();
+        caseDao.deleteById(Case.class, this.caseFXObjectProperty.get().getId());
+        DbManager.closeConnectionSource();
+        TaskDao taskDao = new TaskDao();
+        taskDao.deleteByColumnName(Task.SPRAWA,this.getCaseFXObjectProperty().getId());
+        this.init();
+
+    }
 
 
     //getters and setters

@@ -6,6 +6,8 @@ import java.util.Date;
 
 public class Case implements BaseModel{
 
+    public static final String KLIENT = "KLIENT";
+
     public Case(){}
     @DatabaseField(generatedId = true)
     private int id;
@@ -13,7 +15,7 @@ public class Case implements BaseModel{
     private String signature;
     @DatabaseField(columnName = "SAD")
     private String court;
-    @DatabaseField(columnName = "KLIENT")
+    @DatabaseField(columnName = KLIENT)
     private Client client;
     @DatabaseField(columnName = "CZY_SKONCZONE", defaultValue = "false")
     private boolean finished;
@@ -44,6 +46,8 @@ public class Case implements BaseModel{
         return court;
     }
 
+
+    //getters and setters
     public void setCourt(String court) {
         this.court = court;
     }

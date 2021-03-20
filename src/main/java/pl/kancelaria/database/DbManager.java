@@ -28,7 +28,7 @@ public class DbManager {
     public static void initDatabase(){
 
         createConnectionSource();
-        dropTable();
+        //dropTable();
         createTable();
         closeConnectionSource();
     }
@@ -43,10 +43,10 @@ public class DbManager {
 
     private static void createTable() {
         try {
-            TableUtils.createTableIfNotExists(connectionSource, Case.class);
-            TableUtils.createTableIfNotExists(connectionSource, Client.class);
-            TableUtils.createTableIfNotExists(connectionSource, Employee.class);
             TableUtils.createTableIfNotExists(connectionSource, Task.class);
+            TableUtils.createTableIfNotExists(connectionSource, Client.class);
+            TableUtils.createTableIfNotExists(connectionSource, Case.class);
+            TableUtils.createTableIfNotExists(connectionSource, Employee.class);
         } catch (SQLException e) {
             DialogUtils.dialogError(e.getMessage());
         }

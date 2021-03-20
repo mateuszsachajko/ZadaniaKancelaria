@@ -1,11 +1,8 @@
 package pl.kancelaria.modelFX;
 
-import com.j256.ormlite.field.DatabaseField;
 import javafx.beans.property.*;
-import pl.kancelaria.database.models.Client;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class CaseFX {
     private IntegerProperty id = new SimpleIntegerProperty();
@@ -14,7 +11,7 @@ public class CaseFX {
     private ObjectProperty<ClientFX> client = new SimpleObjectProperty<>();
     private BooleanProperty finished = new SimpleBooleanProperty();
     private StringProperty desc = new SimpleStringProperty();
-    private ObjectProperty<LocalDate> startDate = new SimpleObjectProperty<>();
+    private ObjectProperty<LocalDate> startDate = new SimpleObjectProperty<>(LocalDate.now());
 
     // getters and setters
 
@@ -101,5 +98,10 @@ public class CaseFX {
 
     public void setStartDate(LocalDate startDate) {
         this.startDate.set(startDate);
+    }
+
+    @Override
+    public String toString() {
+        return getDesc();
     }
 }

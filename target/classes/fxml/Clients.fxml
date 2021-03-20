@@ -6,17 +6,16 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.kancelaria.controllers.ClientsController">
    <children>
-      <Button mnemonicParsing="false" text="Dodaj Klienta">
+      <Button onAction="#addClient" mnemonicParsing="false" text="Dodaj Klienta">
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </VBox.margin>
       </Button>
-      <TableView maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="1000.0">
+      <TableView fx:id="clientsTable" maxHeight="-Infinity" maxWidth="-Infinity" prefWidth="1000.0">
         <columns>
-          <TableColumn prefWidth="169.0" text="Nazwa" />
-          <TableColumn prefWidth="145.0" text="Aktywne Sprawy" />
-            <TableColumn prefWidth="140.0" text="Sposób rozliczenia" />
-            <TableColumn prefWidth="545.0" text="Komenatrze" />
+          <TableColumn fx:id="colName" prefWidth="169.0" text="Nazwa" />
+            <TableColumn fx:id="colForm" prefWidth="140.0" text="Sposób rozliczenia" />
+            <TableColumn fx:id="colComments" prefWidth="545.0" text="Komenatarze" />
         </columns>
       </TableView>
    </children>

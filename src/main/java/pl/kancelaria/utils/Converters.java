@@ -17,7 +17,8 @@ public class Converters {
 
     public static Case caseFxToCase(CaseFX caseFx){
         Case cas = new Case();
-        cas.setClient(clientFxToClient(caseFx.clientProperty().get()));
+
+        cas.setClient(clientFxToClient(caseFx.getClient()));
         cas.setCourt(caseFx.getCourt());
         cas.setDesc(caseFx.getDesc());
         cas.setFinished(caseFx.finishedProperty().get());
@@ -35,7 +36,7 @@ public class Converters {
         caseFX.setFinished(cas.isFinished());
         caseFX.setId(cas.getId());
         caseFX.setSignature(cas.getSignature());
-        caseFX.setStartDate(dateToLocalDate(cas.getStartDate()));
+       // caseFX.setStartDate(dateToLocalDate(cas.getStartDate()));
         return caseFX;
 
     }
@@ -45,6 +46,7 @@ public class Converters {
         client.setDesc(clientFX.getDesc());
         client.setId(clientFX.getId());
         client.setName(clientFX.getName());
+        client.setFormOfSettlement(clientFX.getFormOfSettlement());
 
         return client;
     }
@@ -54,6 +56,7 @@ public class Converters {
         clientFX.setDesc(client.getDesc());
         clientFX.setId(client.getId());
         clientFX.setName(client.getName());
+        clientFX.setFormOfSettlement(client.getFormOfSettlement());
         return clientFX;
     }
 
@@ -88,7 +91,7 @@ public class Converters {
         return task;
 
     }
-    public static TaskFX TaskToTaskFX(Task task){
+    public static TaskFX taskToTaskFX(Task task){
         TaskFX taskFX = new TaskFX();
         taskFX.setCas(caseToCaseFx(task.getCas()));
         taskFX.setDeadline(dateToLocalDate(task.getDeadLine()));

@@ -74,10 +74,10 @@ public abstract class CommonDao {
         }
     }
 
-    public <T extends BaseModel, I> void findById(Class<T> cls, Integer id) throws AppExc {
+    public <T extends BaseModel, I> T findById(Class<T> cls, Integer id) throws AppExc {
         try {
             Dao<T,I> dao = getDao(cls);
-            dao.queryForId((I) id);
+            return dao.queryForId((I) id);
         } catch (SQLException throwables) {
             DialogUtils.dialogError(throwables.getMessage());
             throw new AppExc("Nie mozna znalezc wpisu");

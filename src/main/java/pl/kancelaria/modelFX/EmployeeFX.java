@@ -62,4 +62,9 @@ public class EmployeeFX {
     public void setPosition(String position) {
         this.position.set(position);
     }
+
+    @Override
+    public String toString() {
+        return this.name + " " + this.surname;
+    }
 }

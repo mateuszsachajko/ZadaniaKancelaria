@@ -1,13 +1,9 @@
 package pl.kancelaria.modelFX;
 
-import com.j256.ormlite.field.DatabaseField;
 import javafx.beans.property.*;
-import pl.kancelaria.database.models.Case;
-import pl.kancelaria.database.models.Employee;
 import pl.kancelaria.utils.StatusENUM;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 public class TaskFX {
 

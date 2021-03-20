@@ -9,8 +9,22 @@ public class ClientFX {
     private IntegerProperty id = new SimpleIntegerProperty();
     private StringProperty name = new SimpleStringProperty();
     private StringProperty desc = new SimpleStringProperty();
+    private StringProperty formOfSettlement = new SimpleStringProperty();
 
     //getters and setters
+
+
+    public String getFormOfSettlement() {
+        return formOfSettlement.get();
+    }
+
+    public StringProperty formOfSettlementProperty() {
+        return formOfSettlement;
+    }
+
+    public void setFormOfSettlement(String formOfSettlement) {
+        this.formOfSettlement.set(formOfSettlement);
+    }
 
     public int getId() {
         return id.get();
@@ -46,5 +60,10 @@ public class ClientFX {
 
     public void setDesc(String desc) {
         this.desc.set(desc);
+    }
+
+    @Override
+    public String toString() {
+        return getName();
     }
 }

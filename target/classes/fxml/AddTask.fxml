@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Slider?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="531.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/15.0.1">
+<GridPane fx:controller="pl.kancelaria.controllers.AddTaskController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="458.0" prefWidth="531.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
   <columnConstraints>
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="294.0" minWidth="10.0" prefWidth="107.0" />
     <ColumnConstraints hgrow="SOMETIMES" maxWidth="497.0" minWidth="10.0" prefWidth="493.0" />
@@ -27,11 +21,11 @@
       <Label text="Sprawa" GridPane.rowIndex="1" />
       <Label text="Priorytet" GridPane.rowIndex="2" />
       <Label text="Pracownik" GridPane.rowIndex="3" />
-      <TextArea prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
-      <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-      <Slider blockIncrement="1.0" majorTickUnit="1.0" max="5.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-      <ComboBox prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-      <Button alignment="CENTER" mnemonicParsing="false" prefHeight="35.0" prefWidth="92.0" text="Zapisz" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+      <TextArea fx:id="taDesc" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
+      <ComboBox fx:id="comboBoxCase" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+      <Slider fx:id="sliderPriority" blockIncrement="1.0" majorTickUnit="1.0" max="5.0" min="1.0" minorTickCount="0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+      <ComboBox fx:id="comboBoxEmployee" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Button fx:id="saveTaskButton" alignment="CENTER" mnemonicParsing="false" onAction="#saveTaskOnAction" prefHeight="35.0" prefWidth="92.0" text="Zapisz" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="4" GridPane.valignment="CENTER">
          <GridPane.margin>
             <Insets right="50.0" />
          </GridPane.margin>

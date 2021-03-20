@@ -13,4 +13,17 @@ public class DialogUtils {
         errorAlert.showAndWait();
 
     }
+
+    public static void dialogEmployeeInfo(){
+        Alert addedEmp = new Alert(Alert.AlertType.INFORMATION);
+        addedEmp.setContentText("Dodano Pracownika!");
+        addedEmp.showAndWait();
+    }
+
+    public static void dialogClientInfo(){
+        Alert addedEmp = new Alert(Alert.AlertType.INFORMATION);
+        addedEmp.setContentText("Dodano Klienta!");
+        addedEmp.showAndWait();
+    }
+
 }

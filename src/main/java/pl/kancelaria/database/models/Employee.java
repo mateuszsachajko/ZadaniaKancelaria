@@ -1,7 +1,9 @@
 package pl.kancelaria.database.models;
 
 import com.j256.ormlite.field.DatabaseField;
+import com.j256.ormlite.table.DatabaseTable;
 
+@DatabaseTable(tableName = "PRACOWNICY")
 public class Employee  implements BaseModel{
 
     public Employee(){}

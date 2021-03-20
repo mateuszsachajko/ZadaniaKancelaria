@@ -2,8 +2,12 @@ package pl.kancelaria.database.dao;
 
 import com.j256.ormlite.dao.Dao;
 import com.j256.ormlite.stmt.DeleteBuilder;
+import com.j256.ormlite.stmt.QueryBuilder;
+import com.j256.ormlite.stmt.Where;
+import pl.kancelaria.database.models.BaseModel;
 import pl.kancelaria.database.models.Task;
 import pl.kancelaria.utils.AppExc;
+import pl.kancelaria.utils.DialogUtils;
 
 import java.sql.SQLException;
 

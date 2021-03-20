@@ -11,15 +11,11 @@ import java.util.Date;
 public class Task implements BaseModel{
 
     public static final String SPRAWA = "SPRAWA";
-
-    public Task(){
-        this.deadLine = todayPlus14Days();
-        this.status = StatusENUM.Status.DO_ZROBIENIA;
-    }
+    public static final String OPIS = "OPIS";
 
     @DatabaseField(generatedId = true)
     private int id;
-    @DatabaseField(columnName = "OPIS")
+    @DatabaseField(columnName = OPIS)
     private String desc;
     @DatabaseField(columnName = "TERMIN")
     private Date deadLine;
@@ -29,17 +25,8 @@ public class Task implements BaseModel{
     private int priority;
     @DatabaseField(columnName = "STATUS")
     private StatusENUM.Status status;
-    @DatabaseField(columnName = "Odpowiedzialny pracownik", canBeNull = false)
+    @DatabaseField(columnName = "Odpowiedzialny pracownik", foreign = true,foreignAutoRefresh = true,foreignAutoCreate = true)
     private Employee employee;
-
-
-
-    public Date todayPlus14Days(){
-        Date date = new Date();
-        LocalDateTime.from(date.toInstant()).plusDays(14);
-        return date;
-    }
-
 
     //getters and setters
 

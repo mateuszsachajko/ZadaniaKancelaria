@@ -32,7 +32,7 @@ public class ClientModel {
     }
     public void saveInDb() throws AppExc {
         ClientDao clientDao = new ClientDao();
-        Client client = Converters.clientFxToClient(this.getClientFXObject());
+        Client client = Converters.clientFxToClient(this.clientFXObject.get());
         clientDao.createOrUpdate(client);
         DbManager.closeConnectionSource();
         this.init();
